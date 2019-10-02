@@ -1,0 +1,40 @@
+Program Notes:
+
+-We need to make a roulette wheel. 60 minutes. 
+
+-User Inputs:
+    -What type of bets they want to make
+        -color
+        -number
+        -status
+    -How much money they want to bet for this round
+
+    -In order to acheive std input in JS we need to do it async / await with promises
+    -This might affect the compile of the rest of the program 
+
+-Program Architecture
+
+    - Helper functions
+        1. Capture user Inputs
+        2. Calculate the price won if bet was correct
+        3. Determine if the number is odd or even
+        4. A program to actually complete the roulette 
+            - Needs to return the number, color, and if it's odd or even
+            - Needs to randomly get a number between 1 and 36, while also accounting for -1, or 00 
+        
+    -Extra Parameters 
+        -We also need to make sure the program can be repeated.
+        -We need to make sure that we can't set an amount more than the bankroll.
+        -We need to give the user the ability to see the results.
+
+
+Problems:
+    
+    1. Stdinput always running nonstop
+        Solution: Using .pause made the program stop running after typing in the parameter
+
+    2. functions after async won't run.
+        Solution: I made the following function a promise as well, this allowed for it to be compiled and waited on.
+
+    3. String was being recorded and shown, but it didn't match the switch case strings
+        Solution: I added .trim(), I assume this trimmed off any other spaces given by the stdinput 
