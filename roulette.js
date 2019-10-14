@@ -34,9 +34,9 @@ async function main()
             if(bankroll === '0')
                 bankroll = await prompt(`Sorry, you can't play with that amount. Please enter a value that is more than 1`);
             
-            if(moneyDown > bankroll)
+            while(moneyDown > bankroll)
             {
-                await prompt(`Your bet cannot be more than your bankroll. Please enter an amount less than your total bankroll: `);
+                moneyDown = await prompt(`Your bet cannot be more than your bankroll. Please enter an amount less than your total bankroll: `);
             }
 
 
